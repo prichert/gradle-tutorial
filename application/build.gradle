@@ -1,4 +1,5 @@
 plugins {
+    id "dev.nx.gradle.project-graph" version "0.1.7"
 	id 'org.springframework.boot' version '3.2.2'
 	id 'io.spring.dependency-management' version '1.1.4'
 	id 'java'
@@ -20,4 +21,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation project(':library')
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+allprojects {
+    apply {
+        plugin("dev.nx.gradle.project-graph")
+    }
 }
